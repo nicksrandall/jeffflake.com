@@ -2,6 +2,7 @@
 import { jsx, css, keyframes } from '@emotion/core'
 import Img from 'gatsby-image'
 import mq from './mq'
+import Media from 'react-media'
 
 const slideInLeft = keyframes`
   from {
@@ -43,20 +44,29 @@ const Header = ({ fluid }) => (
       css={css`
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
-        bottom: 0;
+        width: 100%;
+        height: 100%;
       `}
     >
-      <Img
-        css={css`
-          object-fit: cover;
-        `}
-        fluid={fluid}
-        fadeIn={false}
-        alt="Jeff Flake"
-        critical={true}
-      />
+      <Media query="(max-width: 767px)">
+        {matches => (
+          <Img
+            css={css`
+              width: 100%;
+              height: 100%;
+            `}
+            imgStyle={{
+              objectFit: 'cover',
+              objectPosition: matches ? 'top center' : 'top right',
+            }}
+            fluid={fluid}
+            fadeIn={false}
+            alt="Jeff Flake"
+            critical={true}
+          />
+        )}
+      </Media>
     </div>
     <div
       css={css`

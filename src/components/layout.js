@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
 
-import { main } from './colors'
+import { main, background } from './colors'
 
 import './layout.css'
 
@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
         <div>{children}</div>
         <footer
           css={css`
-            background-color: #fff;
+            background-color: ${background};
           `}
         >
           <div

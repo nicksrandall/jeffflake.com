@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core'
 import React, { Component } from 'react'
 import mq from './mq'
 
-import { main } from './colors'
+import { main, background } from './colors'
 
 const script = url =>
   new Promise((res, rej) => {
@@ -43,7 +43,7 @@ export default class TwitterTimelineEmbed extends Component {
     return (
       <div
         css={css`
-          background-color: #fff;
+          background-color: ${background};
         `}
       >
         <div

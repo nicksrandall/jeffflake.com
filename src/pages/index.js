@@ -7,12 +7,12 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Twitter from '../components/twitter'
 
-import { main, darker, lighter } from '../components/colors'
+import { main, darker, lighter, background } from '../components/colors'
 
 const Content = ({ children }) => (
   <div
     css={mq({
-      color: '#fff',
+      color: background,
       padding: ['30px', '30px', '30px', '60px'],
       maxWidth: '800px',
       margin: 'auto',
@@ -133,8 +133,8 @@ const IndexPage = ({ data }) => (
               maxWidth: ['100%', '300px'],
             })}
             display: block;
-            color: #fff;
-            border: 2px solid #fff;
+            color: ${background};
+            border: 2px solid ${background};
             background: transparent;
             text-decoration: inherit;
             padding: 10px;
@@ -142,7 +142,7 @@ const IndexPage = ({ data }) => (
             background: ${main};
             &:hover {
               color: ${main};
-              background: #fff;
+              background: ${background};
             }
           `}
         >

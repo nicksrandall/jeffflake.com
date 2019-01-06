@@ -3,7 +3,7 @@ import { jsx, css, keyframes } from '@emotion/core'
 import Img from 'gatsby-image'
 import mq from './mq'
 
-import { main, lighter } from './colors'
+import { main, background, red } from './colors'
 
 const slideInLeft = keyframes`
   from {
@@ -16,17 +16,17 @@ const slideInLeft = keyframes`
 `
 
 const buttonStyles = css`
-  margin: 0px 12px 0 0;
-  color: #fff;
-  background: ${main};
+  margin: 12px 12px 0 0;
+  color: ${background};
+  background: ${red};
   text-decoration: inherit;
   padding: 12px;
   text-align: center;
   transition: background;
-  white-space: nowrap;
+  display: inline-block;
   &:hover {
-    background: #fff;
-    color: ${main};
+    background: ${main};
+    color: ${background};
   }
 `
 
@@ -36,10 +36,10 @@ const Header = ({ fluid }) => (
       width: 100%;
       ${mq({
         height: ['40vh', '50vh', '60vh', '80vh'],
+        alignItems: ['flex-end', 'center'],
       })}
-      background-color: #fff;
+      background-color: ${background};
       display: flex;
-      align-items: center;
       overflow: hidden;
       position: relative;
     `}
@@ -72,7 +72,7 @@ const Header = ({ fluid }) => (
       css={css`
         width: 100%;
         max-width: 1024px;
-        margin: auto;
+        margin: 0 auto;
         animation-name: ${slideInLeft};
         animation-fill-mode: both;
         animation-delay: 500ms;
@@ -85,8 +85,7 @@ const Header = ({ fluid }) => (
       <div
         css={css`
           float: left;
-          background: rgba(224, 223, 218, 0.95);
-          border: 1px solid ${main};
+          background: ${main};
           ${mq({
             padding: ['30px', '30px', '60px'],
           })}
@@ -98,8 +97,9 @@ const Header = ({ fluid }) => (
             ${mq({
               fontSize: ['48px', '60px', '72px'],
             })}
-            color: ${main};
-            margin: 0 0 30px 0;
+            color: ${background};
+            margin: 0 0 0px 0;
+            white-space: nowrap;
           `}
         >
           Jeff Flake

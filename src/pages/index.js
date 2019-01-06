@@ -7,12 +7,14 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Twitter from '../components/twitter'
 
+import { main, darker, lighter } from '../components/colors'
+
 const Content = ({ children }) => (
   <div
     css={mq({
       color: '#fff',
       padding: ['30px', '30px', '30px', '60px'],
-      maxWidth: '1024px',
+      maxWidth: '800px',
       margin: 'auto',
     })}
   >
@@ -24,7 +26,7 @@ const Section = ({ children }) => (
   <div
     css={css`
       width: 100%;
-      background-color: #961e23;
+      background-color: ${main};
     `}
   >
     {children}
@@ -47,11 +49,16 @@ const IndexPage = ({ data }) => (
           About Jeff Flake
         </h2>
         <div
-          css={mq({
-            marginTop: ['30px', '30px', '30px', '60px'],
-            padding: ['30px', '30px', '60px', '60px'],
-            backgroundColor: 'rgba(35, 35, 35, 0.5)',
-          })}
+          css={css`
+            & p:last-child {
+              margin-bottom: 0px;
+            }
+            ${mq({
+              marginTop: ['30px', '30px', '30px', '60px'],
+              padding: ['30px', '30px', '60px', '60px'],
+              backgroundColor: darker,
+            })}
+          `}
         >
           <p>
             "We are no longer used to great Senate speeches," wrote Lawfare
@@ -61,10 +68,20 @@ const IndexPage = ({ data }) => (
             given on the Senate floor in my memory."
           </p>
           <p>
-            Author of the New York Times best seller Conscience of a
-            Conservative: A Rejection of Destructive Politics and a Return to
-            Principle, Senator Flake has taken a lonely stand for principle and
-            civility in an era of hyper-partisanship. 
+            Author of the New York Times best seller 
+            <a
+              css={css`
+                color: ${lighter};
+              `}
+              href=""
+            >
+              <i>
+                Conscience of a Conservative: A Rejection of Destructive
+                Politics and a Return to Principle
+              </i>
+            </a>
+            , Senator Flake has taken a lonely stand for principle and civility
+            in an era of hyper-partisanship. 
           </p>
           <p>
             After serving six terms in the U.S. House of Representatives,
@@ -109,10 +126,10 @@ const IndexPage = ({ data }) => (
               margin: [
                 '30px auto 0px',
                 '30px auto 0px',
-                '30px auto 0px',
-                '60px auto 0px',
+                '60px auto 30px',
+                '60px auto 30px',
               ],
-              width: ['100%', 'auto', 'auto'],
+              width: ['100%', 'auto'],
               maxWidth: ['100%', '300px'],
             })}
             display: block;
@@ -122,9 +139,14 @@ const IndexPage = ({ data }) => (
             text-decoration: inherit;
             padding: 10px;
             text-align: center;
+            background: ${main};
+            &:hover {
+              color: ${main};
+              background: #fff;
+            }
           `}
         >
-          Invite Jeff to Speak
+          Invite Jeff to speak
         </a>
       </Content>
     </Section>
@@ -136,9 +158,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    hero: file(
-      relativePath: { eq: "Jeff_Flake_official_Senate_photo (1).jpg" }
-    ) {
+    hero: file(relativePath: { eq: "JEFF_MOD.png" }) {
       childImageSharp {
         fluid(maxWidth: 1440) {
           ...GatsbyImageSharpFluid_withWebp

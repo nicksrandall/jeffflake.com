@@ -2,7 +2,8 @@
 import { jsx, css, keyframes } from '@emotion/core'
 import Img from 'gatsby-image'
 import mq from './mq'
-import Media from 'react-media'
+
+import { main, lighter } from './colors'
 
 const slideInLeft = keyframes`
   from {
@@ -15,16 +16,17 @@ const slideInLeft = keyframes`
 `
 
 const buttonStyles = css`
-  margin: 0px 15px 0 0;
+  margin: 0px 12px 0 0;
   color: #fff;
-  background-color: #961e23;
+  background: ${main};
   text-decoration: inherit;
-  padding: 15px;
+  padding: 12px;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: background;
+  white-space: nowrap;
   &:hover {
-    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    background: #fff;
+    color: ${main};
   }
 `
 
@@ -32,8 +34,10 @@ const Header = ({ fluid }) => (
   <div
     css={css`
       width: 100%;
-      height: 80vh;
-      background-color: #ededef;
+      ${mq({
+        height: ['40vh', '50vh', '60vh', '80vh'],
+      })}
+      background-color: #fff;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -49,60 +53,70 @@ const Header = ({ fluid }) => (
         height: 100%;
       `}
     >
-      <Media query="(max-width: 767px)">
-        {matches => (
-          <Img
-            css={css`
-              width: 100%;
-              height: 100%;
-            `}
-            imgStyle={{
-              objectFit: 'cover',
-              objectPosition: matches ? 'top center' : 'top right',
-            }}
-            fluid={fluid}
-            fadeIn={false}
-            alt="Jeff Flake"
-            critical={true}
-          />
-        )}
-      </Media>
+      <Img
+        css={css`
+          width: 100%;
+          height: 100%;
+        `}
+        imgStyle={{
+          objectFit: 'cover',
+          objectPosition: 'top right',
+        }}
+        fluid={fluid}
+        fadeIn={false}
+        alt="Jeff Flake"
+        critical={true}
+      />
     </div>
     <div
       css={css`
-        ${mq({
-          padding: ['30px', '30px', '60px'],
-        })}
         width: 100%;
+        max-width: 1024px;
+        margin: auto;
         animation-name: ${slideInLeft};
         animation-fill-mode: both;
         animation-delay: 500ms;
         animation-duration: 500ms;
+        ${mq({
+          padding: ['30px', '30px', '60px'],
+        })}
       `}
     >
-      <h1
+      <div
         css={css`
-          font-size: 60px;
-          color: #961e23;
-          margin: 0 0 30px 0;
-          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-            0 1px 2px rgba(0, 0, 0, 0.24);
+          float: left;
+          background: rgba(224, 223, 218, 0.95);
+          border: 1px solid ${main};
+          ${mq({
+            padding: ['30px', '30px', '60px'],
+          })}
         `}
       >
-        Jeff Flake
-      </h1>
-      <a
-        href="https://www.harrywalker.com/speakers/jeff-flake/"
-        css={buttonStyles}
-      >
-        Invite Jeff to Speak
-      </a>
-      <a
-        href="https://www.penguinrandomhouse.com/books/561219/conscience-of-a-conservative-by-jeff-flake/9780399592911/"
-        css={buttonStyles}
-      >
-        Buy the book
-      </a>
+        <h1
+          css={css`
+            text-algin: center;
+            ${mq({
+              fontSize: ['48px', '60px', '72px'],
+            })}
+            color: ${main};
+            margin: 0 0 30px 0;
+          `}
+        >
+          Jeff Flake
+        </h1>
+        <a
+          href="https://www.harrywalker.com/speakers/jeff-flake/"
+          css={buttonStyles}
+        >
+          Invite Jeff to speak
+        </a>
+        <a
+          href="https://www.penguinrandomhouse.com/books/561219/conscience-of-a-conservative-by-jeff-flake/9780399592911/"
+          css={buttonStyles}
+        >
+          Buy his book
+        </a>
+      </div>
     </div>
   </div>
 )

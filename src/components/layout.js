@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
 
+import { main } from './colors'
+
 import './layout.css'
 
 const Social = ({ url }) => (
@@ -33,7 +35,7 @@ const Layout = ({ children }) => (
         <div>{children}</div>
         <footer
           css={css`
-            background-color: #ededef;
+            background-color: #fff;
           `}
         >
           <div

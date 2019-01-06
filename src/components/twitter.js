@@ -3,6 +3,8 @@ import { jsx, css } from '@emotion/core'
 import React, { Component } from 'react'
 import mq from './mq'
 
+import { main } from './colors'
+
 const script = url =>
   new Promise((res, rej) => {
     var s = document.createElement('script')
@@ -26,8 +28,8 @@ export default class TwitterTimelineEmbed extends Component {
         {
           sourceType: 'profile',
           screenName: 'JeffFlake',
-          linkColor: '#141433',
-          borderColor: '#141433',
+          linkColor: main,
+          borderColor: main,
         },
         this.myRef.current,
         {
@@ -41,7 +43,7 @@ export default class TwitterTimelineEmbed extends Component {
     return (
       <div
         css={css`
-          background-color: #ededef;
+          background-color: #fff;
         `}
       >
         <div

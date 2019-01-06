@@ -1,7 +1,17 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core'
-import heroImage from '../images/Jeff_Flake_official_Senate_photo (1).jpg'
+import { jsx, css, keyframes } from '@emotion/core'
+import Img from 'gatsby-image'
 import mq from './mq'
+
+const slideInLeft = keyframes`
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`
 
 const buttonStyles = css`
   margin: 0px 15px 0 0;
@@ -9,41 +19,64 @@ const buttonStyles = css`
   background-color: #961e23;
   text-decoration: inherit;
   padding: 15px;
-  border-radius: 4px;
   text-align: center;
-  transition: background-color 200ms ease-ou;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
-    background-color: rgba(85, 29, 31, 1);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
   }
 `
 
-const Header = () => (
+const Header = ({ fluid }) => (
   <div
     css={css`
       width: 100%;
       height: 90vh;
-      background-color: #f2f2f2;
-      background-image: url('${heroImage}');
-      background-position: top right;
-      background-size: cover;
+      background-color: #ededef;
       display: flex;
       align-items: center;
+      overflow: hidden;
+      position: relative;
     `}
   >
     <div
-      css={mq({
-        width: '100%',
-        padding: ['30px', '30px', '60px'],
-        maxWidth: '1024px',
-        margin: 'auto',
-      })}
+      css={css`
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      `}
+    >
+      <Img
+        css={css`
+          object-fit: cover;
+        `}
+        fluid={fluid}
+        fadeIn={false}
+        alt="Jeff Flake"
+        critical={true}
+      />
+    </div>
+    <div
+      css={css`
+        ${mq({
+          padding: ['30px', '30px', '60px'],
+        })}
+        width: 100%;
+        animation-name: ${slideInLeft};
+        animation-fill-mode: both;
+        animation-delay: 500ms;
+        animation-duration: 500ms;
+      `}
     >
       <h1
         css={css`
           font-size: 60px;
           color: #961e23;
-          margin-bottom: 30px;
-          color
+          margin: 0 0 30px 0;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+            0 1px 2px rgba(0, 0, 0, 0.24);
         `}
       >
         Jeff Flake

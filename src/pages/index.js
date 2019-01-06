@@ -31,10 +31,10 @@ const Section = ({ children }) => (
   </div>
 )
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Hero />
+    <Hero fluid={data.hero.childImageSharp.fluid} />
     <Section>
       <Content>
         <h2
@@ -49,16 +49,15 @@ const IndexPage = () => (
           css={mq({
             marginTop: ['30px', '30px', '60px'],
             padding: ['30px', '60px', '60px'],
-            borderRadius: '12px',
             backgroundColor: 'rgba(35, 35, 35, 0.5)',
           })}
         >
           <p>
-            “We are no longer used to great Senate speeches,” wrote Lawfare
-            Editor in Chief, Benjamin Wittes, in October of 2017. “And then
+            "We are no longer used to great Senate speeches," wrote Lawfare
+            Editor in Chief, Benjamin Wittes, in October of 2017. "And then
             rises one Jeff Flake and delivers not merely a great speech but also
             a genuinely important one, perhaps the single most important address
-            given on the Senate floor in my memory.”
+            given on the Senate floor in my memory."
           </p>
           <p>
             Author of the New York Times best seller Conscience of a
@@ -115,7 +114,6 @@ const IndexPage = () => (
             background: transparent;
             text-decoration: inherit;
             padding: 10px;
-            border-radius: 4px;
             text-align: center;
           `}
         >
@@ -128,3 +126,17 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    hero: file(
+      relativePath: { eq: "Jeff_Flake_official_Senate_photo (1).jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1440) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

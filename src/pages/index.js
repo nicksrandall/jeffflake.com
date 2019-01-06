@@ -11,7 +11,7 @@ const Content = ({ children }) => (
   <div
     css={mq({
       color: '#fff',
-      padding: ['30px', '30px', '60px'],
+      padding: ['30px', '30px', '30px', '60px'],
       maxWidth: '1024px',
       margin: 'auto',
     })}
@@ -41,14 +41,15 @@ const IndexPage = ({ data }) => (
           css={css`
             text-align: center;
             font-size: 36px;
+            margin: 30px 0 60px 0;
           `}
         >
           About Jeff Flake
         </h2>
         <div
           css={mq({
-            marginTop: ['30px', '30px', '60px'],
-            padding: ['30px', '60px', '60px'],
+            marginTop: ['30px', '30px', '30px', '60px'],
+            padding: ['30px', '30px', '60px', '60px'],
             backgroundColor: 'rgba(35, 35, 35, 0.5)',
           })}
         >
@@ -105,9 +106,15 @@ const IndexPage = ({ data }) => (
           href="https://www.harrywalker.com/speakers/jeff-flake/"
           css={css`
             ${mq({
-              margin: ['30px auto 0px', '30px auto 0px', '60px auto 0px'],
+              margin: [
+                '30px auto 0px',
+                '30px auto 0px',
+                '30px auto 0px',
+                '60px auto 0px',
+              ],
+              width: ['100%', 'auto', 'auto'],
+              maxWidth: ['100%', '300px'],
             })}
-            max-width: 300px;
             display: block;
             color: #fff;
             border: 2px solid #fff;

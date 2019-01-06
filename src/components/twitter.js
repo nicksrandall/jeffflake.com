@@ -26,8 +26,14 @@ export default class TwitterTimelineEmbed extends Component {
         {
           sourceType: 'profile',
           screenName: 'JeffFlake',
+          linkColor: '#141433',
+          borderColor: '#141433',
         },
-        this.myRef.current
+        this.myRef.current,
+        {
+          chrome: 'noheader nofooter transparent noborders',
+          tweetLimit: 5,
+        }
       )
     )
   }
@@ -52,6 +58,7 @@ export default class TwitterTimelineEmbed extends Component {
             css={css`
               text-transform: uppercase;
               text-align: center;
+              margin: 30px 0 30px;
             `}
           >
             The Latest with Jeff

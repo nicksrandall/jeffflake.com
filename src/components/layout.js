@@ -51,7 +51,7 @@ const Layout = ({ children }) => (
               max-width: 1024px;
               margin: auto;
               ${mq({
-                padding: ['30px', '30px', '60px'],
+                padding: ['30px', '30px', '30px', '60px'],
               })}
             `}
           >

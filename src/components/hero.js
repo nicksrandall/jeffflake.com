@@ -32,7 +32,7 @@ const Header = ({ fluid }) => (
   <div
     css={css`
       width: 100%;
-      height: 90vh;
+      height: 80vh;
       background-color: #ededef;
       display: flex;
       align-items: center;

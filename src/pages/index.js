@@ -6,9 +6,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Twitter from '../components/twitter'
-import Media from 'react-media'
 
-import { main, darker, lighter, background } from '../components/colors'
+import { main, darker, red, background } from '../components/colors'
 
 const Content = ({ children }) => (
   <div
@@ -64,11 +63,11 @@ const IndexPage = ({ data }) =>
               & p:last-child {
                 margin-bottom: 0px;
               }
+              border: 5px solid ${darker};
               ${mq({
                 marginTop: ['30px', '30px', '30px', '60px'],
                 padding: ['30px', '30px', '60px', '60px'],
-                backgroundColor: darker,
-              })}
+              })};
             `}
           >
             <p>
@@ -82,7 +81,8 @@ const IndexPage = ({ data }) =>
               Author of the New York Times best seller 
               <a
                 css={css`
-                  color: ${lighter};
+                  color: ${red};
+                  border-bottom: 1px solid ${red};
                   box-shadow: none;
                 `}
                 href=""

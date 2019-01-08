@@ -110,7 +110,9 @@ const Header = ({ hero, signature }) => (
                 })}
               `}
               fluid={signature}
-              critical
+              alt="Jeff Flake signature"
+              fadeIn={false}
+              critical={true}
               imgStyle={{ marginBottom: 0 }}
             />
             <a

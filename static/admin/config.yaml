@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+  - name: speeches
+    label: Speeches
+    folder: speeches
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: location, label: Location }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+  - name: carousel
+    label: Carousel
+    folder: carousel
+    create: true
+    fields:
+      - { name: location, label: Location }
+      - { label: Image, name: image, widget: image }

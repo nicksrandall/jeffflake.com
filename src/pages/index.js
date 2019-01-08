@@ -36,10 +36,7 @@ const Section = ({ children }) => (
 const IndexPage = ({ data }) =>
   console.log('data', data) || (
     <Layout>
-      <SEO
-        title="JeffFlake.com | Home"
-        keywords={['Jeff', 'Flake', 'Senator']}
-      />
+      <SEO title="Home" keywords={['Jeff', 'Flake', 'Senator']} />
       <Hero
         hero={data.hero.childImageSharp.fluid}
         signature={data.signature.childImageSharp.fluid}

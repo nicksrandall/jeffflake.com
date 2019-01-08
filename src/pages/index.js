@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Twitter from '../components/twitter'
 
-import { main, darker, red, background } from '../components/colors'
+import { main, darker, red, background, lighter } from '../components/colors'
 
 const Content = ({ children }) => (
   <div
@@ -63,7 +63,7 @@ const IndexPage = ({ data }) =>
               & p:last-child {
                 margin-bottom: 0px;
               }
-              border: 5px solid ${darker};
+              border: 5px solid ${lighter};
               ${mq({
                 marginTop: ['30px', '30px', '30px', '60px'],
                 padding: ['30px', '30px', '60px', '60px'],
@@ -81,8 +81,8 @@ const IndexPage = ({ data }) =>
               Author of the New York Times best seller 
               <a
                 css={css`
-                  color: ${red};
-                  border-bottom: 1px solid ${red};
+                  color: ${lighter};
+                  border-bottom: 1px solid ${lighter};
                   box-shadow: none;
                 `}
                 href=""

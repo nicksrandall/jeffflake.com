@@ -13,6 +13,7 @@ import './layout.css'
 const Social = ({ url }) => (
   <SocialIcon
     css={css`
+      box-shadow: none;
       margin: 5px;
     `}
     url={url}

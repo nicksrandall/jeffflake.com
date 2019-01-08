@@ -85,7 +85,7 @@ const IndexPage = ({ data }) =>
                   border-bottom: 1px solid ${lighter};
                   box-shadow: none;
                 `}
-                href=""
+                href="https://www.penguinrandomhouse.com/books/561219/conscience-of-a-conservative-by-jeff-flake/9780399592911/"
               >
                 <i>
                   Conscience of a Conservative: A Rejection of Destructive

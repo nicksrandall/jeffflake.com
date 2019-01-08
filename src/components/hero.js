@@ -19,7 +19,7 @@ const slideInLeft = keyframes`
 const buttonStyles = css`
   margin: 12px 12px 0 0;
   color: ${background};
-  background: ${red};
+  background: ${main};
   text-decoration: inherit;
   padding: 12px;
   text-align: center;
@@ -27,8 +27,8 @@ const buttonStyles = css`
   display: inline-block;
   box-shadow: none;
   &:hover {
-    background: ${main};
-    color: ${background};
+    background: ${red};
+    color: ${main};
   }
 `
 

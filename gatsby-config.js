@@ -5,7 +5,6 @@ module.exports = {
     author: `Jeff Flake`,
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -29,6 +28,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['material icons'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-emotion`,
       options: {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
@@ -39,8 +44,16 @@ module.exports = {
       options: {
         pathToConfigModule: `src/components/typography`,
       },
-    }, // this (optional) plugin enables Progressive Web App + Offline functionality
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

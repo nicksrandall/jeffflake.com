@@ -120,12 +120,6 @@ const Header = ({ hero, signature }) => (
             >
               Invite Jeff to speak
             </a>
-            <a
-              href="https://www.penguinrandomhouse.com/books/561219/conscience-of-a-conservative-by-jeff-flake/9780399592911/"
-              css={buttonStyles}
-            >
-              Buy his book
-            </a>
           </div>
         </div>
       </div>

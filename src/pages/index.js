@@ -116,7 +116,7 @@ class IndexPage extends Component {
               title="Buy his Book"
             />
             <Tile
-              href="mailto:someone@yoursite.com"
+              href="mailto:postsenateflake@gmail.com"
               icon="contact_mail"
               title="Contact Jeff"
             />

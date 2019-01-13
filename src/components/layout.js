@@ -5,10 +5,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import { SocialIcon } from 'react-social-icons'
+import smoothscroll from 'smoothscroll-polyfill'
 
 import { main, background } from './colors'
 
 import './layout.css'
+
+// kick off the polyfill!
+smoothscroll.polyfill()
 
 const Social = ({ url }) => (
   <SocialIcon

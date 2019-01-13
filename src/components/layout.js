@@ -12,7 +12,9 @@ import { main, background } from './colors'
 import './layout.css'
 
 // kick off the polyfill!
-smoothscroll.polyfill()
+if (typeof window !== 'undefined') {
+  smoothscroll.polyfill()
+}
 
 const Social = ({ url }) => (
   <SocialIcon

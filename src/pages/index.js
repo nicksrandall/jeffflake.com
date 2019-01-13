@@ -25,13 +25,26 @@ const Content = ({ children, maxWidth = '800px' }) => (
   </div>
 )
 
-const Section = React.forwardRef(({ bg, paddingTop = 0, ...props }, ref) => (
+const MainSection = props => (
+  <div
+    css={css`
+      width: 100%;
+      ${mq({
+        paddingTop: ['30px', '100px'],
+      })}
+      background-color: ${main};
+    `}
+    {...props}
+  />
+)
+
+const Section = React.forwardRef((props, ref) => (
   <div
     ref={ref}
     css={css`
-      padding-top: ${paddingTop};
+      padding-top: 30px;
       width: 100%;
-      background-color: ${bg};
+      background-color: ${lighter};
     `}
     {...props}
   />
@@ -122,7 +135,7 @@ class IndexPage extends Component {
             />
           </div>
         </div>
-        <Section bg={main} paddingTop="100px">
+        <MainSection>
           <Content>
             <h2
               css={css`
@@ -242,8 +255,8 @@ class IndexPage extends Component {
               Invite Jeff to speak
             </a>
           </Content>
-        </Section>
-        <Section ref={this.speeches} bg={lighter}>
+        </MainSection>
+        <Section ref={this.speeches}>
           <Content maxWidth="1028px" paddingTop="30px">
             <div
               css={css`

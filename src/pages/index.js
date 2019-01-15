@@ -280,12 +280,29 @@ class IndexPage extends Component {
               <YouTube
                 id="yWQg-VG9Euw"
                 title="Harvard Law School Commencement"
+                start={1280}
               />
-              <YouTube id="m8Mnv3WcQPk" title="Truth and Democracy" />
-              <YouTube id="ghsmNARi3QA" title="I Rise to Say Enough" />
-              <YouTube id="YQaS8HqpSok" title="Higher Ground" />
-              <YouTube id="o8-E8qnLTRo" title="Land of Room Enough" />
-              <YouTube id="kSiCNf0u-5E" title="Friends, Not Enemies" />
+              <YouTube
+                id="m8Mnv3WcQPk"
+                title="Truth and Democracy"
+                start={815}
+              />
+              <YouTube
+                id="ghsmNARi3QA"
+                title="I Rise to Say Enough"
+                start={80}
+              />
+              <YouTube id="YQaS8HqpSok" title="Higher Ground" start={415} />
+              <YouTube
+                id="o8-E8qnLTRo"
+                title="Land of Room Enough"
+                start={1436}
+              />
+              <YouTube
+                id="kSiCNf0u-5E"
+                title="Friends, Not Enemies"
+                start={581}
+              />
             </div>
           </Content>
         </Section>

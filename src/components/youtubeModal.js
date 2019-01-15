@@ -13,7 +13,7 @@ export default class extends Component {
     showDialog: false,
   }
   render() {
-    let { id, title } = this.props
+    let { id, title, start = 0 } = this.props
     return (
       <>
         <div
@@ -82,7 +82,7 @@ export default class extends Component {
                 top: 0;
                 left: 0;
               `}
-              src={`https://www.youtube.com/embed/${id}`}
+              src={`https://www.youtube.com/embed/${id}?start=${start}`}
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

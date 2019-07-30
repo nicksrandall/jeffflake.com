@@ -13,7 +13,7 @@ export default class extends Component {
     showDialog: false,
   }
   render() {
-    let { id, title, poster, start = 0 } = this.props
+    let { id, title, poster } = this.props
     return (
       <>
         <div
@@ -34,20 +34,20 @@ export default class extends Component {
               background: #000;
             `}
           >
-          <img
-            css={css`
-              margin: 0;
+            <img
+              css={css`
+                margin: 0;
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-            `}
-            src={poster ? poster : `https://img.youtube.com/vi/${id}/0.jpg`}
-            loading="lazy"
-          />
-        </div>
+              `}
+              src={poster}
+              loading="lazy"
+            />
+          </div>
           <div
             css={css`
               text-align: center;
@@ -99,7 +99,7 @@ export default class extends Component {
                 left: 0;
               `}
               loading="lazy"
-              src={`https://www.youtube.com/embed/${id}?start=${start}`}
+              src={`https://www.cbsnews.com/video/${id}/`}
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

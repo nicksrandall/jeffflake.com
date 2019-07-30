@@ -9,6 +9,8 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import Twitter from '../components/twitter'
 import YouTube from '../components/youtubeModal'
+import CBSVideo from '../components/cbsModal'
+import VimeoVideo from '../components/vimeoModal'
 
 import { main, darker, red, background, lighter } from '../components/colors'
 
@@ -162,11 +164,11 @@ class IndexPage extends Component {
               `}
             >
               <p>
-                "We are no longer used to great Senate speeches," wrote Lawfare
-                Editor in Chief, Benjamin Wittes, in October of 2017. "And then
+                “We are no longer used to great Senate speeches,” wrote Lawfare
+                Editor in Chief, Benjamin Wittes, in October of 2017. “And then
                 rises one Jeff Flake and delivers not merely a great speech but
                 also a genuinely important one, perhaps the single most
-                important address given on the Senate floor in my memory."
+                important address given on the Senate floor in my memory.”
               </p>
               <p>
                 Author of the New York Times best seller 
@@ -194,30 +196,31 @@ class IndexPage extends Component {
                 the intersection of innovation and regulation. He also chaired
                 the Africa Subcommittee of the Foreign Relations Committee,
                 where he passed landmark legislation on wildlife trafficking and
-                democratic governance. 
+                democratic governance.
               </p>
               <p>
                 Prior to entering Congress, Senator Flake served as executive
                 director of the Goldwater Institute in Arizona. He also directed
                 the Foundation for Democracy in Namibia during that nation’s
-                transition to independence.  Senator Flake holds a B.A. in
-                International Relations and an M.A. in Political Science from
-                Brigham Young University.
+                transition to independence. Senator Flake holds degrees in
+                International Relations and Political Science from Brigham Young
+                University.
               </p>
               <p>
                 Known for his ability to work across the political aisle,
                 Senator Flake was the lead House Republican in the successful
                 effort to prohibit spending earmarks, and the lead Senate
                 Republican in the successful effort to restore diplomatic
-                relations with Cuba. 
+                relations with Cuba.
               </p>
               <p>
                 A sought-after speaker, Senator Flake delivered the 2018
-                commencement address at Harvard Law School. His recent Senate
-                floor speech titled “Truth and Democracy”was carried live on
-                CNN, MSNBC and the FOX News Channel. Senator Flake is a frequent
-                guest on NBC’s Meet the Press, ABC’s This Week, and CBS’ Face
-                the Nation.
+                commencement address at Harvard Law School. His 2018 Senate
+                floor speech titled “Truth and Democracy” was carried live on
+                CNN, MSNBC and the FOX News Channel. During his time in the
+                Senate, Senator was a frequent guest on NBC’s Meet the Press,
+                ABC’s This Week, CBS’ Face the Nation, and CNN’s State of the
+                Union.
               </p>
               <p>
                 Senator Flake and his wife, Cheryl, live in Mesa, Arizona, and
@@ -302,6 +305,26 @@ class IndexPage extends Component {
                 id="kSiCNf0u-5E"
                 title="Friends, Not Enemies"
                 start={581}
+              />
+              <CBSVideo 
+                id="how-an-environmentalist-and-a-logger-came-together-to-save-arizonas-forests"
+                poster="https://cbsnews1.cbsistatic.com/hub/i/r/2019/04/17/d74812cf-902b-4646-8300-50a3cdd66d19/thumbnail/1280x720/75eedb4353d2902099123d0bfe60bfd5/0417-ctm-commongroundforests-flake-1831311-640x360.jpg"
+                title="Unlikely allies unite to save Arizona forests"
+              />
+              <CBSVideo
+                id="cory-booker-and-mike-lee-put-aside-politics-to-tackle-criminal-justice-reform"
+                poster="https://cbsnews1.cbsistatic.com/hub/i/r/2019/07/22/dec04250-bc13-4800-8655-5116f60cac89/thumbnail/1280x720/bce5f563eee4af6e20e577bc959b2ac4/0722-ctm-criminaljustice-flake-1895865-640x360.jpg"
+                title="Senators put politics aside for prison reform"
+              />
+              <YouTube
+                id="QOnr3DengMs"
+                poster="/assets/jeff_video_thumb.png"
+                title="Former Sen. Jeff Flake on why Republicans aren't disavowing Trump's 'awful' words"
+              />
+              <VimeoVideo
+                id="345511987"
+                poster="https://i.vimeocdn.com/video/795312424.jpg?mw=1500&mh=844"
+                title="Podium Island Survival Trip"
               />
             </div>
           </Content>

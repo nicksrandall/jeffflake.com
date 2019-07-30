@@ -60,8 +60,10 @@ export default class extends Component {
           css={css`
             position: relative;
             background: ${background};
-            padding: 48px;
-            width: 80vw;
+            ${mq({
+              padding: ['48px 12px', '48px'],
+              width: ['90vw', '80vw']
+            })}
           `}
           isOpen={this.state.showDialog}
           onDismiss={() => this.setState({ showDialog: false })}

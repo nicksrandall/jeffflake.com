@@ -12,7 +12,7 @@ import YouTube from '../components/youtubeModal'
 import CBSVideo from '../components/cbsModal'
 import VimeoVideo from '../components/vimeoModal'
 
-import { main, darker, red, background, lighter } from '../components/colors'
+import { main, red, background, lighter } from '../components/colors'
 
 const Content = ({ children, maxWidth = '800px' }) => (
   <div
@@ -346,14 +346,14 @@ export const pageQuery = graphql`
     hero: file(relativePath: { eq: "JEFF_MOD.png" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     signature: file(relativePath: { eq: "Flake_Signature.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

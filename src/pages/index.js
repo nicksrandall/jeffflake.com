@@ -306,7 +306,7 @@ class IndexPage extends Component {
                 title="Friends, Not Enemies"
                 start={581}
               />
-              <CBSVideo 
+              <CBSVideo
                 id="how-an-environmentalist-and-a-logger-came-together-to-save-arizonas-forests"
                 poster="https://cbsnews1.cbsistatic.com/hub/i/r/2019/04/17/d74812cf-902b-4646-8300-50a3cdd66d19/thumbnail/1280x720/75eedb4353d2902099123d0bfe60bfd5/0417-ctm-commongroundforests-flake-1831311-640x360.jpg"
                 title="Unlikely allies unite to save Arizona forests"
@@ -325,6 +325,10 @@ class IndexPage extends Component {
                 id="345511987"
                 poster="https://i.vimeocdn.com/video/795312424.jpg?mw=1500&mh=844"
                 title="Podium Island Survival Trip"
+              />
+              <YouTube
+                id="Jc47srPn9_k"
+                title="Common Ground: Music Modernization"
               />
             </div>
           </Content>
